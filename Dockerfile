@@ -35,3 +35,7 @@ COPY img ./img
 
 # Launches the Flash application when the container is launched
 CMD python3 -m flask run --host=0.0.0.0
+
+# commands for shell
+# docker build -t mft-neuromodule-python-flask-hackathon-v2 .
+# docker run -p 5000:5000 mft-neuromodule-python-flask-hackathon-v2
