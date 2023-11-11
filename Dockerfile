@@ -8,6 +8,10 @@ RUN pip install flask-restful
 RUN pip install ultralytics
 RUN pip install Pillow
 RUN pip install openpyxl
+RUN pip install io
+RUN pip install os
+RUN pip install cv2
+RUN pip install numpy
 
 # Copies the poetry.lock and py project.tool files to the container
 # Installs Poetry package manager and exports dependencies to a file requirements.txt
