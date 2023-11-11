@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "mft-neuromodule-python-flask-hackathon-v1"
+version = "0.1.0"
+description = ""
+authors = ["Daniil <daniilvdovin4@gmail.com>"]
+readme = "README.md"
+packages = [{include = "mft_neuromodule_python_flask_hackathon_v2"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.0"
+jsonify = "^0.5"
+cors = "^1.0.1"
+api = "^0.0.7"
+resource = "^0.2.1"
+flask-cors = "^4.0.0"
+flask-restful = "^0.3.10"
+ultralytics = "^8.0.208"
+image = "^1.5.33"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
