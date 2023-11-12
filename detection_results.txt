@@ -1,0 +1,3 @@
+File: svarka4.png
+Detection Results: <_io.BytesIO object at 0x000001A4A7187510>
+

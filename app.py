@@ -15,7 +15,7 @@ api = Api(app)
 CORS(app)
 
 
-# the function gets an img from React and processes it v1
+# the code gets an img from React and processes it
 class FileUploadPhoto(Resource):
     def post(self):
         file = request.files["file"]
@@ -32,7 +32,12 @@ api.add_resource(FileUploadPhoto, "/api/upload/photo")
 def detect_photo(file):
     print("The detect has begun")
     buf = file
+    filename = buf.filename
     boxes = detect_objects_on_image(buf.stream)
+    # Write the filename and detection results to a text file
+    with open("detection_results.txt", "a") as f:
+        f.write(f"File: {filename}\n")
+        f.write(f"Detection Results: {boxes}\n\n")
     return jsonify(boxes)
 
 
@@ -65,7 +70,10 @@ def get_image():
     return send_file('img/output.png', mimetype='img/png')
 
 
-# the function gets a video from React and processes it v1
+# end of working with photo
+
+
+# the code gets a video from React and processes it
 @app.route('/api/upload/video', methods=['POST'])
 def upload():
     file = request.files['file']
@@ -120,6 +128,9 @@ def video():
     out.release()
 
     return send_file('video/output.mp4', mimetype='video/mp4')
+
+
+# end of working with video
 
 
 @app.route('/api/send-to-excel')
